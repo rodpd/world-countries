@@ -1,20 +1,26 @@
 <template>
-  <HelloWorld/>
+	<Navbar />
+	<Home/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Home,
+    Navbar
+}
 }
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Nunito, Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
