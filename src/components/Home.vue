@@ -3,11 +3,11 @@
 <main class="mt-4 bg-mgray-200">
 	
 	<div class="p-6 ml-14">
-		<SearchInput />
+		<SearchInput v-model="search"/>
 	</div>
 	
 	<div class="flex flex-wrap gap-8 px-16 py-4">
-	<CardCountry v-for="country in countries" :key="country.name.common" 
+	<CardCountry v-for="country in filteredCountries" :key="country.name.common" 
 	:imgSrc="country.flags.png"
 	:country="country.name.common" 
 	:population="country.population"
@@ -34,7 +34,8 @@ export default {
 	},
 	data() {
 		return {
-			countries: null
+			countries: [],
+			search: ''
 		}
 	},
 	methods: {
@@ -57,8 +58,18 @@ export default {
 			})
 		}
 	},
+	computed: {
+		filteredCountries() {
+			return this.countries.filter((country) => country.name.common.toLowerCase().includes(this.search));
+		}
+	},
 	mounted() {
 		this.fetchData();
+	},
+	watch: {
+		search(newSearch) {
+			console.log(newSearch);
+		}
 	}
 }
 </script>
