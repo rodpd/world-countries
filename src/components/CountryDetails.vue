@@ -7,7 +7,7 @@
 			<h1 class="text-2xl font-black md:mt-5">{{name}}</h1>
 			<div class="md:grid md:grid-cols-2">
 				<div class="my-5">
-					<p class="mb-1"><span class="mt-10 font-semibold text-dblue-300">Native Name: </span>{{name}}</p>
+					<p class="mb-1"><span class="mt-10 font-semibold text-dblue-300">Native Name: </span>{{nativeName}}</p>
 					<p class="mb-1"><span class="font-semibold text-dblue-300">Population: </span>{{population}}</p>
 					<p class="mb-1"><span class="font-semibold text-dblue-300">Sub Region: </span>{{subRegion}}</p>
 					<p class="mb-1"><span class="font-semibold text-dblue-300">Region: </span>{{region}}</p>
@@ -62,6 +62,7 @@ export default {
                 json = json[0];
                 this.imgLink = json.flags.svg;
                 this.name = json.name.common;
+				this.nativeName = Object.values(json.name.nativeName)[0].official;
                 this.population = json.population;
                 this.region = json.region;
                 this.subRegion = json.subregion;
@@ -99,5 +100,7 @@ export default {
 
 
 <style>
-	
+	* {
+		background-color: hsl(0, 0%, 98%);
+	}
 </style>

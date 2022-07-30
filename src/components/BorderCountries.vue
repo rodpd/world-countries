@@ -1,8 +1,8 @@
 <template>
 <div class="mt-5 mb-20 md:inline md:mt-0 md:mb-0 md:ml-4">
-	<router-link v-for="(border, index) in countries" :key="index" :to="`/country/${border}`">
+	<router-link v-for="(border, index) in countries" :key="index" :to="`/country/${border[1]}`">
 	<button class="px-6 py-1 mb-4 mr-4 duration-300 rounded-lg shadow-outer bg-mgray-100 hover:text-blue-600">
-		{{border}}
+		{{border[0]}}
 	</button>
 	</router-link>
 </div>
@@ -42,7 +42,7 @@ export default {
                 .then(json => {
 					this.countries = [];
 					for ( let i in json ) {
-						this.countries.push(json[i].name.common);
+						this.countries.push([json[i].name.common, json[i].name.official]);
 				}
                 
             });
