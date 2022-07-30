@@ -1,14 +1,15 @@
 <template>
-
-    <div class="mx-auto my-3 rounded-lg shadow-lg w-72 bg-mgray-100">
-        <img :src="`${imgSrc}`" alt="" class="rounded-t-lg w-72">
-        <div class="p-4 mb-6">
-            <h2 class="py-4 text-2xl font-black text-dblue-300">{{country}}</h2>
-            <p><span class="font-semibold text-dblue-300">Population: </span>{{population}}</p>
-            <p><span class="font-semibold text-dblue-300">Region: </span>{{region}}</p>
-            <p><span class="font-semibold text-dblue-300">Capital: </span>{{`${capital}`}}</p>
-        </div>
-    </div>
+	<div class="mx-auto my-3 duration-300 rounded-lg shadow-lg w-72 bg-mgray-100 hover:scale-110 hover:shadow-2xl">
+		<router-link :to="`/country/${countryOfficial}`">
+			<img :src="`${imgSrc}`" alt="" class="rounded-t-lg w-72">
+			<div class="p-4 mb-6">
+				<h2 class="py-4 text-2xl font-black text-dblue-300">{{country}}</h2>
+				<p><span class="font-semibold text-dblue-300">Population: </span>{{population}}</p>
+				<p><span class="font-semibold text-dblue-300">Region: </span>{{region}}</p>
+				<p><span class="font-semibold text-dblue-300">Capital: </span>{{`${capital}`}}</p>
+			</div>
+		</router-link>
+	</div>
 
 </template>
 
@@ -27,6 +28,10 @@ export default {
             type: String,
             default: "Brazil"
         },
+		countryOfficial: {
+			type: String,
+			default: "Brazil"
+		},
         population: {
 			type: Number,
             default: 123456

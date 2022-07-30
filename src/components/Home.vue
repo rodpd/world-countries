@@ -9,7 +9,8 @@
 	<div class="flex flex-wrap gap-8 px-16 py-4">
 	<CardCountry v-for="country in filteredCountries" :key="country.name.common" 
 	:imgSrc="country.flags.png"
-	:country="country.name.common" 
+	:country="country.name.common"
+	:countryOfficial="country.name.official"
 	:population="country.population"
 	:region="country.region"
 	:capital="country.capital"
