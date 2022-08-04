@@ -1,5 +1,4 @@
 <template>
-<div class="col-span-4 row-start-2 md:row-start-1 md:col-start-4">
 	<button @click="toggle" class="px-6 py-4 rounded-lg shadow-md outline-none bg-mgray-100">
 		{{region}}
 		<svg class="inline w-5 h-5 ml-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -13,7 +12,6 @@
 			{{region}}
 		</li>
 	</ul>
-</div>
 
 </template>
 
