@@ -1,7 +1,7 @@
 <template>
 
 <main class="mt-4 bg-mgray-200">
-	<div class="py-6 pl-6 ml-14">
+	<div class="grid grid-cols-4 gap-12 py-6 pl-6 md:gap-0 md:ml-14">
 		<SearchInput v-model="search"/>
 		<RegionFilterDropdown @update:region="(newRegion) => this.region = newRegion" />
 	</div>

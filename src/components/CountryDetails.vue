@@ -1,5 +1,8 @@
 <template>
-	<div class="px-[10vw] bg-mgray-200 md:grid md:grid-cols-2 md:px-0 md:mt-20">
+	<div class="mt-14 ml-[5vw]">
+		<BackButton />
+	</div>
+	<div class="px-[10vw] bg-mgray-200 md:grid md:grid-cols-2 md:px-0 md:mt-14">
 		<div class="md:mx-auto">
 			<img :src="`${imgLink}`" alt="" class="my-10 w-[80vw] md:w-[40vw] md:my-0 rounded-lg shadow-outer">
 		</div>
@@ -30,6 +33,7 @@
 
 <script>
 import BorderCountries from './BorderCountries.vue';
+import BackButton from './BackButton.vue';
 export default {
     name: "CountryDetails",
     data() {
@@ -86,8 +90,9 @@ export default {
         this.fetchData();
     },
     components: {
-		BorderCountries
-	},
+    BorderCountries,
+    BackButton
+},
 	watch: {
 		$route() {
 			console.log(this.$route.params.countryName);
