@@ -95,7 +95,6 @@ export default {
 },
 	watch: {
 		$route() {
-			console.log(this.$route.params.countryName);
 			this.fetchData();
 		}
 	}
