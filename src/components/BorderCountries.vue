@@ -1,6 +1,6 @@
 <template>
 <div class="mt-5 mb-20 md:inline md:mt-0 md:mb-0 md:ml-4">
-	<router-link v-for="(border, index) in countries" :key="index" :to="`/country/${border[1]}`">
+	<router-link v-for="(border, index) in countries" :key="index" :to="`/country/${border[1].replaceAll(' ', '%20')}`">
 	<button class="px-6 py-1 mb-4 mr-4 duration-300 rounded-lg shadow-outer dark:shadow-lg dark:bg-dblue-100 dark:hover:text-blue-200 bg-mgray-100 hover:text-blue-600">
 		{{border[0]}}
 	</button>
