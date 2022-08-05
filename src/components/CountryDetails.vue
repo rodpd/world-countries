@@ -2,28 +2,29 @@
 	<div class="mt-14 ml-[5vw]">
 		<BackButton />
 	</div>
-	<div class="px-[10vw] bg-mgray-200 md:grid md:grid-cols-2 md:px-0 md:mt-14">
+	<div class="px-[10vw] bg-mgray-200 dark:bg-dblue-200 md:grid md:grid-cols-2 md:px-0 md:mt-14">
 		<div class="md:mx-auto">
 			<img :src="`${imgLink}`" alt="" class="my-10 w-[80vw] md:w-[40vw] md:my-0 rounded-lg shadow-outer">
 		</div>
 		<div class="md:px-10">
-			<h1 class="text-2xl font-black md:mt-5">{{name}}</h1>
+			<h1 class="text-2xl font-extrabold md:mt-5 text-dblue-300 dark:text-mgray-100">{{name}}</h1>
 			<div class="md:grid md:grid-cols-2">
 				<div class="my-5">
-					<p class="mb-1"><span class="mt-10 font-semibold text-dblue-300">Native Name: </span>{{nativeName}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Population: </span>{{population}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Sub Region: </span>{{subRegion}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Region: </span>{{region}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Capital: </span>{{`${capital}`}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="mt-10 font-semibold">Native Name: </span>{{nativeName}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Population: </span>{{population.toLocaleString('pt')}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Sub Region: </span>{{subRegion}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Region: </span>{{region}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Capital: </span>{{`${capital}`}}</p>
 				</div>
 				<div class="my-5">
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Top Level Domain: </span>{{`${topLevelDomain}`}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Currencies: </span>{{currencies}}</p>
-					<p class="mb-1"><span class="font-semibold text-dblue-300">Languages: </span>{{languages}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold">Top Level Domain: </span>{{`${topLevelDomain}`}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Currencies: </span>{{currencies}}</p>
+					<p class="mb-1 text-dblue-300 dark:text-mgray-100"><span class="font-semibold ">Languages: </span>{{languages}}</p>
 				</div>
 			</div>
-			<p><span class="font-semibold text-dblue-300">Border Countries: </span>
+			<p class="text-dblue-300 dark:text-mgray-100"><span class="font-semibold">Border Countries: </span>
 						<BorderCountries :borders="borderCountries" v-if="borderCountries" />
+						<span v-else>None</span>
 			</p>
 		</div>
 	</div>
@@ -104,7 +105,4 @@ export default {
 
 
 <style>
-	* {
-		background-color: hsl(0, 0%, 98%);
-	}
 </style>

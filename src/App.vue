@@ -19,6 +19,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 #app {
-  font-family: Nunito, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Nunito, Avenir, Helvetica, Arial, sans-serif;
+	background-color: hsl(0, 0%, 98%);
 }
 </style>
