@@ -1,5 +1,5 @@
 <template>
-	<div class="my-3 transition-transform duration-300 rounded-lg shadow-lg focus:rounded-full w-72 bg-mgray-100 hover:scale-110 hover:shadow-2xl dark:bg-dblue-100">
+	<div class="my-5 transition-[transform,box-shadow] duration-300 rounded-lg shadow-lg focus:rounded-full w-72 hover:scale-110 bg-mgray-100 hover:shadow-2xl dark:bg-dblue-100">
 		<router-link :to="`/country/${countryOfficial.replaceAll(' ', '%20')}`">
 			<img :src="`${imgSrc}`" alt="" class="rounded-t-lg w-72">
 			<div class="p-4 mb-6">
